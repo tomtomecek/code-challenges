@@ -111,8 +111,8 @@ class Game
     raise GameNotOverError unless game_over?
     raise NotYetScoreError unless last_frame.finished?
 
-    @frames.each_with_index.reduce(0) do |result, (frame, i)|
-      result + frame.score(@frames[i+1], @frames[i+2])
+    @frames.each_with_index.sum do |(frame, i)|
+      frame.score(@frames[i + 1], @frames[i + 2])
     end
   end
 

@@ -16,7 +16,7 @@ private
   def define_getters_for_kids
     @kids.each_with_index do |kid_name, idx|
       define_singleton_method(kid_name) do
-        @garden[ @kids.index(kid_name) ]
+        @garden[ idx ]
       end
     end
   end
